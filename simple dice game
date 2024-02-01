@@ -1,0 +1,74 @@
+namespace DiceGame
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.WriteLine("Welcome to simple dice game");
+
+            Random rdm = new Random();
+
+            int playerDice;
+            int playerPoints=0;
+
+            int enemyDice;
+            int enemyPoints=0;
+
+            for (int i = 0; i <5; i++)
+            {
+
+                Console.WriteLine("Roll the dice. Press any key to roll the dice");
+
+                Console.ReadKey();
+
+                playerDice = rdm.Next(1, 7);
+
+                Console.WriteLine($"You rolled: " + playerDice);
+
+                Console.WriteLine("---WAITING FOR THE ENEMY---");
+
+                enemyDice = rdm.Next(1,7);
+
+                Console.WriteLine($"Enemy player rolled: " + enemyDice);
+
+                if (playerDice > enemyDice)
+                {
+                    playerPoints++;
+
+
+                }
+                else if (playerDice < enemyDice)
+                {
+                    enemyPoints++;
+
+                }
+                else
+                {
+                    Console.WriteLine("Its a draw");
+                }
+
+                Console.WriteLine($"How goes the score? :  PLayer " + playerPoints + " Enemy " + enemyPoints);
+
+                Console.WriteLine("-------");
+
+
+            }
+
+            if (playerPoints > enemyPoints)
+            {
+                Console.WriteLine("Player WIN");
+            }else if (playerPoints < enemyPoints)
+            {
+                Console.WriteLine("Enemy WIN");
+            }
+            else
+            {
+                Console.WriteLine("DRAW");
+            }
+
+
+        }
+    }
+}
