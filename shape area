@@ -1,0 +1,45 @@
+namespace guessShape
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            String answer;
+
+            float result = 0;
+
+
+            Console.WriteLine("Ingresa 'r' para calcular el area del rectangulo o 'c' para el circulo");
+
+            answer = Console.ReadLine();
+
+            if (answer == "r")
+            {
+
+                Console.WriteLine("Ingrese el valor de la altura");
+                float height = float.Parse(Console.ReadLine());
+
+
+                Console.WriteLine("Ingrese el valor del ancho");
+                float width = float.Parse(Console.ReadLine());
+
+                result = height * width;
+            }
+            else {
+
+                Console.WriteLine("Ingrese el radio del circulo");
+                float radio = float.Parse(Console.ReadLine());
+
+                result = (float)Math.PI * (radio * radio);
+            
+            }
+
+
+
+            Console.WriteLine($"El resultado es: {result}");
+
+        }
+    }
+}
